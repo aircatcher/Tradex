@@ -14,10 +14,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class home extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener
+{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -40,6 +42,10 @@ public class home extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        final EditText email       = (EditText) findViewById(R.id.email);
+        final EditText password    = (EditText) findViewById(R.id.password);
+        final
     }
 
     @Override

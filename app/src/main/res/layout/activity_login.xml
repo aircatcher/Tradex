@@ -15,10 +15,10 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/email"
-        android:text="email"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="169dp" />
+        android:layout_marginBottom="169dp"
+        android:hint="E-Mail" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -26,11 +26,11 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/password"
-        android:text="password"
         android:layout_alignTop="@+id/email"
         android:layout_alignLeft="@+id/button_login"
         android:layout_alignStart="@+id/button_login"
-        android:layout_marginTop="46dp" />
+        android:layout_marginTop="46dp"
+        android:hint="Password" />
 
     <Button
         android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:id="@+id/button_signup"
+        android:id="@+id/link_signup"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/email"
         android:layout_alignRight="@+id/password"

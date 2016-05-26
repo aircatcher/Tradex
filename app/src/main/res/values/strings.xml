@@ -6,4 +6,29 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string-array name="country">
+        <item>Don Quixote</item>
+        <item>Sancho Panza</item>
+        <item>Teresa Panza</item>
+        <item>Dulcinea del Toboso</item>
+        <item>Rocinante</item>
+        <item>Dapple</item>
+        <item>Cide Hamete Benengeli</item>
+        <item>Cardenio</item>
+        <item>Mambrino's Helmet</item>
+        <item>La Mancha</item>
+    </string-array>
+    <string-array name="city">
+        <item>Don Quixote</item>
+        <item>Sancho Panza</item>
+        <item>Teresa Panza</item>
+        <item>Dulcinea del Toboso</item>
+        <item>Rocinante</item>
+        <item>Dapple</item>
+        <item>Cide Hamete Benengeli</item>
+        <item>Cardenio</item>
+        <item>Mambrino's Helmet</item>
+        <item>La Mancha</item>
+    </string-array>
 </resources>
