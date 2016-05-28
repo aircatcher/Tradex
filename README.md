@@ -5,8 +5,8 @@
 <ul>
   <li>Added navigation drawer with custom menus</li>
   <li>PHP code updated and up on server:<br/>
-      <code>Host URL: mysql.idhostinger.com<br/>
-      Username: u882472135_trdx<br/>
-      Password: *Ask*<br/>
-      Database: tradex</code></li>
+      <code>Host URL: mysql.idhostinger.com</code><br/>
+      <code>Username: u882472135_trdx</code><br/>
+      <code>Password: *Ask*</code><br/>
+      <code>Database: tradex</code></li>
 </ul>
