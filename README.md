@@ -74,7 +74,7 @@ There are basically 3 (three) user levels of members that are available in our s
 </ul>
   ```
   Host URL: mysql.idhostinger.com
+  Database: u882472135_trdx
   Username: u882472135_trdx
   Password: *Ask*
-  Database: tradex
   ```
