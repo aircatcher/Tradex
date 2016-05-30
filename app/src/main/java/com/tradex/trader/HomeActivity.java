@@ -2,6 +2,7 @@ package com.tradex.trader;
 
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -16,15 +17,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener
-{
+        implements NavigationView.OnNavigationItemSelectedListener {
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -39,27 +46,33 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
-        //Content
-        final TextView tvFullName = (TextView) findViewById(R.id.tvFullName);
-        final TextView tvEmail    = (TextView) findViewById(R.id.tvEmail);
-
-        Intent intent = getIntent();
-        String email = intent.getStringExtra("email");
-        String firstName = intent.getStringExtra("firstName");
-        String lastName = intent.getStringExtra("lastName");
-        etEmail.setText(email);
-        etFullName.setText(firstName + " " + lastName);
-
         //Nav Drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    };
+
+        //Profile details on Nav Drawer
+        final TextView tvEmail = (TextView) findViewById(R.id.letEmail);
+        final TextView tvFullName = (TextView) findViewById(R.id.letPassword);
+
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("etEmail");
+        String firstName = intent.getStringExtra("firstName");
+        String lastName = intent.getStringExtra("lastName");
+
+        tvEmail.setText(email);
+        tvFullName.setText(firstName + " " + lastName);
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    }
+
+    ;
 
     @Override
     public void onBackPressed() {
@@ -69,14 +82,18 @@ public class HomeActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    };
+    }
+
+    ;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
+        getMenuInflater().inflate(R.menu.activity_home_drawer, menu);
         return true;
-    };
+    }
+
+    ;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -91,8 +108,11 @@ public class HomeActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    };
+    }
 
+    ;
+
+    //Fragments for navigation drawer layouts
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -100,45 +120,76 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
 
-        if (id == R.id.nav_trade)
-        {
+        if (id == R.id.nav_trade) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame, new TradeFragment())
                     .commit();
-        }
-        else if (id == R.id.nav_inbox)
-        {
+        } else if (id == R.id.nav_inbox) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame, new InboxFragment())
                     .commit();
-        }
-        else if (id == R.id.nav_friends)
-        {
+        } else if (id == R.id.nav_friends) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame, new FriendsFragment())
                     .commit();
-        }
-        else if (id == R.id.nav_help)
-        {
+        } else if (id == R.id.nav_help) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame, new HelpFragment())
                     .commit();
-        }
-        else if (id == R.id.nav_feedback)
-        {
+        } else if (id == R.id.nav_feedback) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame, new FeedbackFragment())
                     .commit();
-        }
-        /*else if (id == R.id.nav_settings)
-        {
+        } else if (id == R.id.nav_settings) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new SettingsActivity())
+                    .replace(R.id.content_frame, new SettingsFragment())
                     .commit();
-        }*/
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    };
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Home Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app URL is correct.
+                Uri.parse("android-app://com.tradex.trader/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Home Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app URL is correct.
+                Uri.parse("android-app://com.tradex.trader/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
+    }
+
+    ;
 }

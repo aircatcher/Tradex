@@ -23,15 +23,15 @@ public class RegisterActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        final EditText email       = (EditText) findViewById(R.id.etEmail);
-        final EditText firstName   = (EditText) findViewById(R.id.firstName);
-        final EditText lastName    = (EditText) findViewById(R.id.lastName);
-        final EditText password    = (EditText) findViewById(R.id.etPassword);
-        final EditText dateOfBirth = (EditText) findViewById(R.id.dateOfBirth);
-        final EditText country     = (EditText) findViewById(R.id.country);
-        final EditText city        = (EditText) findViewById(R.id.city);
-        final EditText phoneNo     = (EditText) findViewById(R.id.phoneNo);
-        final EditText skypeNo     = (EditText) findViewById(R.id.skypeNo);
+        final EditText email       = (EditText) findViewById(R.id.retEmail);
+        final EditText firstName   = (EditText) findViewById(R.id.retFirstName);
+        final EditText lastName    = (EditText) findViewById(R.id.retLastName);
+        final EditText password    = (EditText) findViewById(R.id.retPassword);
+        final EditText dateOfBirth = (EditText) findViewById(R.id.retDateOfBirth);
+        final EditText country     = (EditText) findViewById(R.id.retCountry);
+        final EditText city        = (EditText) findViewById(R.id.retCity);
+        final EditText phoneNo     = (EditText) findViewById(R.id.retPhoneNo);
+        final EditText skypeNo     = (EditText) findViewById(R.id.retSkypeNo);
 
         final Button button_signup = (Button) findViewById(R.id.button_signup);
         button_signup.setOnClickListener(new View.OnClickListener()

@@ -8,16 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Ferick on 5/28/2016.
+ * Created by Ferick on 5/29/2016.
  */
-public class InboxFragment extends Fragment
+public class SettingsFragment extends Fragment
 {
     View v;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        v = inflater.inflate(R.layout.layout_inbox, container, false);
+        v = inflater.inflate(R.layout.layout_settings, container, false);
         return v;
     }
 }

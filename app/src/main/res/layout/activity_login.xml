@@ -9,47 +9,66 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo"
+        android:src="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/space"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:id="@+id/space"
+        android:layout_above="@+id/letEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="118dp" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/etEmail"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="169dp"
-        android:hint="E-Mail" />
+        android:id="@+id/letEmail"
+        android:hint="E-Mail"
+        android:layout_above="@+id/letPassword"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/etPassword"
-        android:layout_alignTop="@+id/etEmail"
+        android:id="@+id/letPassword"
+        android:hint="Password"
+        android:layout_above="@+id/button_login"
         android:layout_alignLeft="@+id/button_login"
-        android:layout_alignStart="@+id/button_login"
-        android:layout_marginTop="46dp"
-        android:hint="Password" />
+        android:layout_alignStart="@+id/button_login" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/button_login"
-        android:layout_below="@+id/etPassword"
-        android:layout_alignLeft="@+id/etEmail"
-        android:layout_alignStart="@+id/etEmail"
-        android:layout_alignRight="@+id/etEmail"
-        android:layout_alignEnd="@+id/etEmail"
-        android:enabled="true" />
+        android:enabled="true"
+        android:layout_above="@+id/tvEmail"
+        android:layout_alignLeft="@+id/link_signup"
+        android:layout_alignStart="@+id/link_signup"
+        android:layout_alignRight="@+id/letEmail"
+        android:layout_alignEnd="@+id/letEmail" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don&apos;t have an account? Sign up now!"
+        android:text="Don&apos;t have an account?"
         android:id="@+id/tvEmail"
-        android:layout_below="@+id/button_login"
+        android:layout_above="@+id/link_signup"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -58,23 +77,12 @@
 
         android:text="Sign Up"
         android:id="@+id/link_signup"
-        android:layout_below="@+id/tvEmail"
-        android:layout_alignLeft="@+id/etEmail"
-        android:layout_alignRight="@+id/etPassword"
-        android:layout_alignEnd="@+id/etPassword"
         android:enabled="true"
-        android:backgroundTint="#009688" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logo"
-        android:src="@mipmap/ic_launcher"
-        android:layout_above="@+id/etPassword"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:backgroundTint="#009688"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/letEmail"
+        android:layout_alignStart="@+id/letEmail"
+        android:layout_alignRight="@+id/letEmail"
+        android:layout_alignEnd="@+id/letEmail" />
 
 </RelativeLayout>

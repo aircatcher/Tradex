@@ -31,16 +31,16 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText etEmail = (EditText) findViewById(R.id.etEmail);
-        final EditText etPassword = (EditText) findViewById(R.id.etPassword);
+        final EditText letEmail = (EditText) findViewById(R.id.letEmail);
+        final EditText letPassword = (EditText) findViewById(R.id.letPassword);
         final Button button_login = (Button) findViewById(R.id.button_login);
         final Button linkToSignup = (Button) findViewById(R.id.link_signup);
 
         linkToSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent signupIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-                //LoginActivity.this.startActivity(signupIntent);
+                //Intent su_intent = new Intent(LoginActivity.this, RegisterActivity.class);
+               // LoginActivity.this.startActivity(su_intent);
                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                 LoginActivity.this.startActivity(intent);
             }
@@ -49,8 +49,8 @@ public class LoginActivity extends AppCompatActivity {
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String getEmail = etEmail.getText().toString();
-                final String getPassword = etPassword.getText().toString();
+                final String getEmail = letEmail.getText().toString();
+                final String getPassword = letPassword.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override

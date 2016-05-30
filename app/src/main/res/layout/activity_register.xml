@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/etEmail"
+        android:id="@+id/retEmail"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -26,21 +26,21 @@
     <EditText
         android:layout_width="173dp"
         android:layout_height="wrap_content"
-        android:id="@+id/firstName"
+        android:id="@+id/retFirstName"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/etEmail"
+        android:layout_below="@+id/retEmail"
         android:layout_alignParentLeft="true"
         android:hint="First Name" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/lastName"
-        android:layout_alignTop="@+id/firstName"
+        android:id="@+id/retLastName"
+        android:layout_alignTop="@+id/retFirstName"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/firstName"
-        android:layout_toEndOf="@+id/firstName"
+        android:layout_toRightOf="@+id/retFirstName"
+        android:layout_toEndOf="@+id/retFirstName"
         android:hint="Last Name" />
 
     <EditText
@@ -48,10 +48,10 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/etPassword"
+        android:id="@+id/retPassword"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/lastName"
+        android:layout_below="@+id/retLastName"
         android:layout_alignParentLeft="true"
         android:hint="Password" />
 
@@ -60,10 +60,10 @@
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/dateOfBirth"
+        android:id="@+id/retDateOfBirth"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/etPassword"
+        android:layout_below="@+id/retPassword"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:hint="Date of Birth" />
@@ -71,19 +71,19 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/country"
+        android:id="@+id/retCountry"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/dateOfBirth"
+        android:layout_below="@+id/retDateOfBirth"
         android:hint="Country" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/city"
-        android:layout_below="@+id/country"
+        android:id="@+id/retCity"
+        android:layout_below="@+id/retCountry"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="79dp"
@@ -96,26 +96,26 @@
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/phoneNo"
+        android:id="@+id/retPhoneNo"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/lastName"
-        android:layout_toStartOf="@+id/lastName"
+        android:layout_toLeftOf="@+id/retLastName"
+        android:layout_toStartOf="@+id/retLastName"
         android:hint="Phone Number"
-        android:layout_below="@+id/city" />
+        android:layout_below="@+id/retCity" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/skypeNo"
+        android:id="@+id/retSkypeNo"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/phoneNo"
-        android:layout_toEndOf="@+id/phoneNo"
+        android:layout_toRightOf="@+id/retPhoneNo"
+        android:layout_toEndOf="@+id/retPhoneNo"
         android:hint="Skype Number"
-        android:layout_below="@+id/city" />
+        android:layout_below="@+id/retCity" />
 
     <Button
         android:layout_width="wrap_content"
