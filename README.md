@@ -69,6 +69,7 @@ There are basically 3 (three) user levels of members that are available in our s
 # What's New
 <b>Update 5/28/2016</b>
 <ul>
+  <li>Contents are updated, no more blanks</li>
   <li>Added navigation drawer with custom menus</li>
   <li>PHP code updated and up on server:</li>
 </ul>
