@@ -3,30 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context='com.tradex.trader.FeedbackFragment'>
+    tools:context='.MenuActivities.FeedbackActivity'>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/etFeedback"
+        android:id="@+id/etFeedbackText"
         android:layout_marginTop="102dp"
         android:layout_marginLeft="40dp"
         android:width="300dp"
         android:height="300dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:hint="Give us feedback of how we can improve this app." />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit Feedback"
-        android:id="@+id/button_submit_feedback"
-        android:layout_below="@+id/etFeedback"
-        android:layout_alignLeft="@+id/etFeedback"
-        android:layout_alignStart="@+id/etFeedback"
-        android:layout_alignRight="@+id/etFeedback"
-        android:layout_alignEnd="@+id/etFeedback" />
+        android:id="@+id/bSubmitFeedback"
+        android:layout_below="@+id/etFeedbackText"
+        android:layout_alignLeft="@+id/etFeedbackText"
+        android:layout_alignStart="@+id/etFeedbackText"
+        android:layout_alignRight="@+id/etFeedbackText"
+        android:layout_alignEnd="@+id/etFeedbackText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to menu"
+        android:id="@+id/bGoBack"
+        android:layout_below="@+id/bSubmitFeedback"
+        android:layout_alignLeft="@+id/bSubmitFeedback"
+        android:layout_alignStart="@+id/bSubmitFeedback"
+        android:layout_alignRight="@+id/bSubmitFeedback"
+        android:layout_alignEnd="@+id/bSubmitFeedback" />
 </RelativeLayout>

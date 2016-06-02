@@ -3,7 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context='com.tradex.trader.InboxFragment'>
+    tools:context='.MenuActivities.InboxActivity'>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Inbox"
+        android:id="@+id/textView2"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ListView
         android:layout_width="wrap_content"
@@ -13,5 +25,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="45dp"
+        android:listSelector="@drawable/list_row_select"
         android:choiceMode="singleChoice" />
 </RelativeLayout>

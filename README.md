@@ -42,9 +42,9 @@ Tradex is a trading app (currently only for Android) that basically implements o
 # Business Oportunities
 <ul>
   <li>Business companies tend to sell as much products as possible to customers in order to obtain profit</li>
-  <li>Payment system which is reluctant to money as it‚Äôs currency is overwhelming</li>
-  <li>Credit card system might help, but it‚Äôs still depend on the currency itself</li>
-  <li>Item with item trading system could be a fresh ‚Äúclassic‚Äù way to obtain valuables without money</li>
+  <li>Payment system which is reluctant to money as itís currency is overwhelming</li>
+  <li>Credit card system might help, but itís still depend on the currency itself</li>
+  <li>Item with item trading system could be a fresh ìclassicî way to obtain valuables without money</li>
   <li>By implementing a trading app, users can simply trade their items with each other directly</li>
 </ul>
 
