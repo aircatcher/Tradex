@@ -42,9 +42,9 @@ Tradex is a trading app (currently only for Android) that basically implements o
 # Business Oportunities
 <ul>
   <li>Business companies tend to sell as much products as possible to customers in order to obtain profit</li>
-  <li>Payment system which is reluctant to money as itís currency is overwhelming</li>
-  <li>Credit card system might help, but itís still depend on the currency itself</li>
-  <li>Item with item trading system could be a fresh ìclassicî way to obtain valuables without money</li>
+  <li>Payment system which is reluctant to money as it‚Äôs currency is overwhelming</li>
+  <li>Credit card system might help, but it‚Äôs still depend on the currency itself</li>
+  <li>Item with item trading system could be a fresh ‚Äúclassic‚Äù way to obtain valuables without money</li>
   <li>By implementing a trading app, users can simply trade their items with each other directly</li>
 </ul>
 
@@ -67,12 +67,21 @@ There are basically 3 (three) user levels of members that are available in our s
 </ul>
 
 # What's New
-<b>Update 5/28/2016</b>
+<b>Update 6/2/2016</b>
+<ul>
+  <li>Login & Register Activity is now functionable</li>
+  <li>New UI design on Main Activity (Main menu after the login activity)</li>
+  <li><font color="RED">Navigation drawer will be not available temporarily for some reasons</font></li>
+</ul>
+
+Update 5/28/2016
 <ul>
   <li>Contents are updated, no more blanks</li>
   <li>Added navigation drawer with custom menus</li>
-  <li>PHP code updated and up on server:</li>
+  <li>PHP code updated and up on server</li>
 </ul>
+
+# MySQL Server Details
   ```
   Host URL: mysql.idhostinger.com
   Database: u882472135_trdx
