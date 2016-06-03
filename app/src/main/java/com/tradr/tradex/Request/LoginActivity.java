@@ -3,10 +3,12 @@ package com.tradr.tradex.Request;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -90,5 +92,33 @@ public class LoginActivity extends AppCompatActivity
                 queue.add(loginRequest);
             }
         });
+    }
+
+    // Double back button to exit
+    private boolean doubleBackToExitPressedOnce;
+    private Handler mHandler = new Handler();
+    private final Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            doubleBackToExitPressedOnce = false;
+        }
+    };
+
+    @Override
+    protected void onDestroy()
+    {
+        System.exit(1);
+        if (mHandler != null) { mHandler.removeCallbacks(mRunnable); }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please back again to exit", Toast.LENGTH_SHORT).show();
+        mHandler.postDelayed(mRunnable, 2000);
     }
 }

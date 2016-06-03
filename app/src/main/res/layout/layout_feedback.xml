@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context='.MenuActivities.FeedbackActivity'>
+    tools:context='.Fragments.AppFeedback'>
 
     <EditText
         android:layout_width="wrap_content"
@@ -31,14 +31,20 @@
         android:layout_alignRight="@+id/etFeedbackText"
         android:layout_alignEnd="@+id/etFeedbackText" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back to menu"
-        android:id="@+id/bGoBack"
-        android:layout_below="@+id/bSubmitFeedback"
-        android:layout_alignLeft="@+id/bSubmitFeedback"
-        android:layout_alignStart="@+id/bSubmitFeedback"
-        android:layout_alignRight="@+id/bSubmitFeedback"
-        android:layout_alignEnd="@+id/bSubmitFeedback" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:visibility="visible"
+        android:id="@+id/tempFullName"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/tempEmail"
+        android:visibility="visible"
+        android:layout_alignParentTop="true" />
+
 </RelativeLayout>

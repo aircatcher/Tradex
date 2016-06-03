@@ -2,17 +2,22 @@ package com.tradr.tradex;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.tradr.tradex.MenuActivities.FeedbackActivity;
-import com.tradr.tradex.MenuActivities.FriendsActivity;
-import com.tradr.tradex.MenuActivities.HelpActivity;
-import com.tradr.tradex.MenuActivities.InboxActivity;
-import com.tradr.tradex.MenuActivities.SettingsActivity;
-import com.tradr.tradex.MenuActivities.TradeActivity;
+import com.tradr.tradex.Fragments.AppFeedback;
+import com.tradr.tradex.Fragments.Friend.Friends;
+import com.tradr.tradex.Fragments.About;
+import com.tradr.tradex.Fragments.Inbox;
+import com.tradr.tradex.Fragments.Settings;
+import com.tradr.tradex.Fragments.Trade;
 import com.tradr.tradex.Request.LoginActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -49,7 +54,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent tradeScreen = new Intent(MainActivity.this, TradeActivity.class);
+                Intent tradeScreen = new Intent(MainActivity.this, Trade.class);
                 MainActivity.this.startActivity(tradeScreen);
             }
         });
@@ -59,7 +64,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent inboxScreen = new Intent(MainActivity.this, InboxActivity.class);
+                Intent inboxScreen = new Intent(MainActivity.this, Inbox.class);
                 MainActivity.this.startActivity(inboxScreen);
             }
         });
@@ -69,7 +74,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent friendsScreen = new Intent(MainActivity.this, FriendsActivity.class);
+                Intent friendsScreen = new Intent(MainActivity.this, Friends.class);
                 MainActivity.this.startActivity(friendsScreen);
             }
         });
@@ -79,7 +84,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent helpScreen = new Intent(MainActivity.this, HelpActivity.class);
+                Intent helpScreen = new Intent(MainActivity.this, About.class);
                 MainActivity.this.startActivity(helpScreen);
             }
         });
@@ -89,7 +94,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent feedbackScreen = new Intent(MainActivity.this, FeedbackActivity.class);
+                Intent feedbackScreen = new Intent(MainActivity.this, AppFeedback.class);
                 MainActivity.this.startActivity(feedbackScreen);
             }
         });
@@ -99,7 +104,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent settingsScreen = new Intent(MainActivity.this, SettingsActivity.class);
+                Intent settingsScreen = new Intent(MainActivity.this, Settings.class);
                 MainActivity.this.startActivity(settingsScreen);
             }
         });
@@ -113,6 +118,58 @@ public class MainActivity extends AppCompatActivity
                 MainActivity.this.startActivity(logout);
             }
         });
+    }
+
+    // Show action bar menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_actionbar_main, menu);
+        return true;
+    }
+    // Determines if Actin Bar item was selected, then do corresponding action
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.action_bar_about:
+                startActivity(new Intent(this, About.class));
+                return true;
+
+            case R.id.action_bar_settings:
+                startActivity(new Intent(this, Settings.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    // Double back button to exit
+    private boolean doubleBackToExitPressedOnce;
+    private Handler mHandler = new Handler();
+    private final Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            doubleBackToExitPressedOnce = false;
+        }
+    };
+
+    @Override
+    protected void onDestroy()
+    {
+        System.exit(0);
+        if (mHandler != null) { mHandler.removeCallbacks(mRunnable); }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please back again to exit", Toast.LENGTH_SHORT).show();
+        mHandler.postDelayed(mRunnable, 2000);
     }
 
     /*@SuppressWarnings("StatementWithEmptyBody")

@@ -26,6 +26,7 @@
         android:layout_gravity="end"
         android:textAlignment="textEnd"
         android:text="Full Name"
+        android:freezesText="true"
         android:id="@+id/tvFullName"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -38,6 +39,7 @@
         android:layout_gravity="end"
         android:textAlignment="textEnd"
         android:text="E-Mail"
+        android:freezesText="true"
         android:id="@+id/tvEmail"
         android:layout_below="@+id/tvFullName"
         android:layout_alignParentRight="true"
@@ -113,7 +115,7 @@
         android:layout_alignStart="@+id/bInbox" />
 
     <Button
-        android:text="Feedback"
+        android:text="App Feedback"
         android:id="@+id/bFeedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
