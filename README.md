@@ -92,7 +92,14 @@ Update 5/28/2016
 # MySQL Server Details
   ```
   Host URL: mysql.idhostinger.com
-  Database: u882472135_trdx
-  Username: u882472135_trdx
-  Password: *Ask*
+  Database: u923702808_trdx
+  Username: u923702808_trdx
+  Password: tradex123
+  ```
+
+#FTP Server Details
+  ```
+  Host URL: ftp.tradex.esy.es
+  Username: u923702808
+  Password: tradex123
   ```
