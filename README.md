@@ -67,8 +67,16 @@ There are basically 3 (three) user levels of members that are available in our s
 </ul>
 
 # What's New
-<b>Update 6/2/2016</b>
+<b>Update 6/6/2016</b>
 <ul>
+  <li>Error of "INSTALL_PARSE_MANIFEST_MALFORMED" that caused by "API Indexing" error has been fixed.</i>
+</ul>
+
+Update 6/5/2016: <i>Forcing commits, I actually lost the commits of this date</i>
+
+Update 6/2/2016
+<ul>
+  <li>App feedback Activity is now functionable</li>
   <li>Login & Register Activity is now functionable</li>
   <li>New UI design on Main Activity (Main menu after the login activity)</li>
   <li><font color="RED">Navigation drawer will be not available temporarily for some reasons</font></li>
