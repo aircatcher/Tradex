@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tradr.tradex">
+    package="com.tradr.tradex" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -15,101 +15,29 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light" >
-        <activity android:name=".Request.LoginActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.AppCompat.Light" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".LoginActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
-        <activity android:name=".Request.RegisterActivity"
-            android:label="@string/title_activity_register"
-            android:theme="@style/Theme.AppCompat.Light" />
-        <!--
- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
-        -->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
 
-        <!-- Parent Activity -->
-
-
-        <!-- Child Activities -->
-        <activity
-            android:name=".Fragments.Trade"
-            android:label="@string/title_activity_trade"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName=".MainActivity">
-
-            <!-- The meta-data element is needed for versions lower than 4.1 -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".AppFeedback" />
+        <activity android:name=".trade.Trade" />
+        <activity android:name=".trade.MakeTrade" />
+        <activity android:name=".trade.NewItem" />
+        <activity android:name=".About" />
+        <activity android:name=".Settings" />
+        <activity android:name=".friend.Friends" />
+        <activity android:name=".friend.AddFriend" />
+        <activity android:name=".mail.Mail" />
+        <activity android:name=".mail.SearchMail" />
+        <activity android:name=".mail.ComposeMail" >
         </activity>
-        <activity
-            android:name=".Fragments.Inbox"
-            android:label="@string/title_activity_inbox"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName=".MainActivity">
-
-            <!-- The meta-data element is needed for versions lower than 4.1 -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
-            android:name=".Fragments.Friend.Friends"
-            android:label="@string/title_activity_friends"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName=".MainActivity">
-
-            <!-- The meta-data element is needed for versions lower than 4.1 -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
-            android:name=".Fragments.About"
-            android:label="@string/action_bar_about"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName=".MainActivity">
-
-            <!-- The meta-data element is needed for versions lower than 4.1 -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
-            android:name=".Fragments.Settings"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName=".MainActivity">
-
-            <!-- The meta-data element is needed for versions lower than 4.1 -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
-            android:name=".Fragments.AppFeedback"
-            android:label="@string/title_activity_app_feedback"
-            android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName=".MainActivity">
-
-            <!-- The meta-data element is needed for versions lower than 4.1 -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".Fragments.Friend.AddFriend" />
     </application>
 
 </manifest>

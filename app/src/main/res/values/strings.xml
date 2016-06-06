@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">Tradex</string>
+    <string name="app_name">TRADEX</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!-- Action Bar Titles -->
-    <string name="title_activity_login">TRADEX</string>
     <string name="title_activity_register">Register</string>
 
     <string name="title_activity_main">Main Menu</string>
@@ -27,4 +26,14 @@
 
     <string name="action_bar_about">About</string>
     <string name="action_bar_settings">Settings</string>
+
+    <!-- Spinner - Item Categories -->
+    <string name="item_category_prompt">Select Category</string>
+    <string-array name="item_category">
+        <item>Computer peripherals</item>
+        <item>Computer accessories</item>
+        <item>School appliances</item>
+        <item>Home-related items</item>
+        <item>Phones</item>
+    </string-array>
 </resources>

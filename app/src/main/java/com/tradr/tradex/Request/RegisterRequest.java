@@ -1,4 +1,4 @@
-package com.tradr.tradex.Request;
+package com.tradr.tradex.request;
 
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
@@ -8,12 +8,12 @@ import java.util.Map;
 
 public class RegisterRequest extends StringRequest
 {
-    private static final String REGISTER_REQUEST_URL = "http://killdistance.esy.es/tradex/register.php";
+    private static final String REQUEST_URL = "http://tradex.esy.es/include/php/register.php";
     private Map<String, String> params;
 
     public RegisterRequest(String firstName, String lastName, String email, String password, int dateOfBirth, String country, String city, String phoneNo, String skype, Response.Listener<String> listener)
     {
-        super(Method.POST, REGISTER_REQUEST_URL, listener, null);
+        super(Method.POST, REQUEST_URL, listener, null);
         params = new HashMap<>();
         params.put("firstName", firstName);
         params.put("lastName", lastName);

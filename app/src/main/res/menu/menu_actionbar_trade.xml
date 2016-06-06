@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Fragments.Trade">
+    tools:context=".Activity.Trade">
 
-    <item
-        android:id="@+id/action_bar_search"
+    <!--<item
+        android:id="@+id/action_bar_search_trades"
         android:icon="@drawable/ic_search"
         android:title="@string/action_bar_search_trade"
-        app:showAsAction="always"/>
+        app:showAsAction="always"/>-->
 
     <item
-        android:id="@+id/action_bar_add_friend"
-        android:icon="@drawable/ic_compare_arrows"
+        android:id="@+id/action_bar_add_trade"
+        android:icon="@drawable/ic_action_add"
         android:title="@string/action_bar_add_trade"
         app:showAsAction="always"/>
 

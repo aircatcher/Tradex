@@ -1,4 +1,4 @@
-package com.tradr.tradex.Request;
+package com.tradr.tradex.request;
 
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
@@ -8,12 +8,12 @@ import java.util.Map;
 
 public class LoginRequest extends StringRequest
 {
-    private static final String LOGIN_REQUEST_URL = "http://killdistance.esy.es/tradex/login.php";
+    private static final String URL_REQUEST = "http://tradex.esy.es/include/php/login.php";
     private Map<String, String> params;
 
     public LoginRequest(String email, String password, Response.Listener<String> listener)
     {
-        super(Method.POST, LOGIN_REQUEST_URL, listener, null);
+        super(Method.POST, URL_REQUEST, listener, null);
         params = new HashMap<>();
         params.put("email", email);
         params.put("password", password);

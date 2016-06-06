@@ -1,4 +1,4 @@
-package com.tradr.tradex.Request;
+package com.tradr.tradex.request;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -9,11 +9,10 @@ import java.util.Map;
 
 public class TradeRequest extends StringRequest
 {
-    private static final String TRADE_REQUEST_URL = "http://killdistance.esy.es/tradex/retrieve_trade.php";
+    private static final String TRADE_REQUEST_URL = "http://tradex.esy.es/include/php/retrieve_trade.php";
     private Map<String, String> params;
 
-    public TradeRequest(String itemCat, String itemName, String itemDesc, Response.Listener<String> listener)
-    {
+    public TradeRequest(String itemCat, String itemName, String itemDesc, Response.Listener<String> listener) {
         super(Request.Method.POST, TRADE_REQUEST_URL, listener, null);
         params = new HashMap<>();
         params.put("itemCat", itemCat);
@@ -22,8 +21,7 @@ public class TradeRequest extends StringRequest
     }
 
     @Override
-    public Map<String, String> getParams()
-    {
+    public Map<String, String> getParams() {
         return params;
     }
 }

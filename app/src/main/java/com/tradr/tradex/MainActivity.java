@@ -3,7 +3,6 @@ package com.tradr.tradex;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,13 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tradr.tradex.Fragments.AppFeedback;
-import com.tradr.tradex.Fragments.Friend.Friends;
-import com.tradr.tradex.Fragments.About;
-import com.tradr.tradex.Fragments.Inbox;
-import com.tradr.tradex.Fragments.Settings;
-import com.tradr.tradex.Fragments.Trade;
-import com.tradr.tradex.Request.LoginActivity;
+import com.tradr.tradex.friend.Friends;
+import com.tradr.tradex.mail.Mail;
+import com.tradr.tradex.trade.Trade;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -64,7 +59,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent inboxScreen = new Intent(MainActivity.this, Inbox.class);
+                Intent inboxScreen = new Intent(MainActivity.this, Mail.class);
                 MainActivity.this.startActivity(inboxScreen);
             }
         });
@@ -115,6 +110,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent logout = new Intent(MainActivity.this, LoginActivity.class);
+
                 MainActivity.this.startActivity(logout);
             }
         });
@@ -145,56 +141,22 @@ public class MainActivity extends AppCompatActivity
     }
 
     // Double back button to exit
-    private boolean doubleBackToExitPressedOnce;
-    private Handler mHandler = new Handler();
-    private final Runnable mRunnable = new Runnable() {
-        @Override
-        public void run() {
-            doubleBackToExitPressedOnce = false;
-        }
-    };
-
-    @Override
-    protected void onDestroy()
-    {
-        System.exit(0);
-        if (mHandler != null) { mHandler.removeCallbacks(mRunnable); }
-    }
-
+    boolean doubleBackToExitPressedOnce = false;
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
             return;
         }
+
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please back again to exit", Toast.LENGTH_SHORT).show();
-        mHandler.postDelayed(mRunnable, 2000);
+        Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
-
-    /*@SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-        FragmentManager fragmentManager = getFragmentManager();
-
-        if (id == R.id.nav_trade) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new TradeFragment()).commit();
-        } else if (id == R.id.nav_inbox) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new InboxFragment()).commit();
-        } else if (id == R.id.nav_friends) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new FriendsFragment()).commit();
-        } else if (id == R.id.nav_help) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new HelpFragment()).commit();
-        } else if (id == R.id.nav_feedback) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new FeedbackFragment()).commit();
-        } else if (id == R.id.nav_settings) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new SettingsFragment()).commit();
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }*/
 }
